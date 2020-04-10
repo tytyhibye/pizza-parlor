@@ -1,6 +1,5 @@
 //Business Logic:
-let topHolder = []
-let topPrice = 0;
+
 
 function Pizza(size, topping, coupon,) {
   this.size = size;
@@ -39,11 +38,15 @@ Pizza.prototype.toppingPrice = function() {
 //User Interface Logic:
 
 $(document).ready(function() {
-
-  $("input[type=radio]").click(function() {
+  let topHolder = []
+  $("input:checkbox").click(function() {
     
-    topHolder.push($(this).val())
-    
+    topHolder.push(parseInt($(this).val()))
+    //Loops through topHolder Array and adds all the values up
+    let topPrice = topHolder.reduce(function(accumulator, currentValue){
+      return accumulator + currentValue
+    })
+    console.log(topPrice)
   });
 
   $('#button1').on('click', '#start', function(event) {
@@ -55,12 +58,9 @@ $(document).ready(function() {
   $("form#pizzaSpecs").submit(function(event) {
     event.preventDefault();
     
-    console.log(topHolder.reduce(function(acc,cul){
-        return acc + cul
-      })
-    )
+    
     var inputSize = $("#size").val();
-    //var inputTopping = $("input[type=radio]:checked").val();
+    //var inputTopping = $("input:checkbox").val();
     
     var pizza = new Pizza(inputSize, inputTopping);
     pizza.sizePrice();
@@ -75,11 +75,7 @@ $(document).ready(function() {
       $(".results").fadeOut(500);
       $(".menu").fadeIn(1700);
       document.getElementById('pizzaSpecs').reset();
-      pizza.priceTotal = 0;
+      // pizza.priceTotal = 0;
     })
-  
-    // console.log(pizza.topPrice,pizza.price,pizza.priceTotal);
-    
-    // console.log(inputSize, inputTopping, pizza.base)
   })
 });
