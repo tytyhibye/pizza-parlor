@@ -12,10 +12,10 @@ function Pizza(size, topping, coupon,) {
 //User Interface Logic:
 
 $(document).ready(function() {
-  
-  let topHolder = []
-  let topping = ''
-  let topPrice
+  let topPrice = 0;
+  let topHolder = [];
+  let topping = '';
+  // let topPrice
   
   Pizza.prototype.sizePrice = function() {
     
