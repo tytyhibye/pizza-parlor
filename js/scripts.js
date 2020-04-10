@@ -22,12 +22,8 @@ Pizza.prototype.sizePrice = function() {
   }
 }
 
-// ** NEED TO FIX THIS **
 
-Pizza.prototype.toppingPrice = function() {
 
- 
-}
   
 
   // Pizza.prototype.totalPrice = function() {
@@ -38,16 +34,18 @@ Pizza.prototype.toppingPrice = function() {
 //User Interface Logic:
 
 $(document).ready(function() {
-  let topHolder = []
-  $("input:checkbox").click(function() {
+  // let topHolder = []
+  
+  
+  // $("input:checkbox").select(function() {
     
-    topHolder.push(parseInt($(this).val()))
-    //Loops through topHolder Array and adds all the values up
-    let topPrice = topHolder.reduce(function(accumulator, currentValue){
-      return accumulator + currentValue
-    })
-    console.log(topPrice)
-  });
+  //   topHolder.push(parseInt($(this).val()))
+  //   //Loops through topHolder Array and adds all the values up
+  //   let topPrice = topHolder.reduce(function(accumulator, currentValue){
+  //     return accumulator + currentValue
+  //   })
+  //   console.log(topPrice)
+  // });
 
   $('#button1').on('click', '#start', function(event) {
     event.preventDefault();
@@ -60,11 +58,11 @@ $(document).ready(function() {
     
     
     var inputSize = $("#size").val();
-    //var inputTopping = $("input:checkbox").val();
-    
+    var inputTopping = parseInt($("input:checkbox:checked").val());
+    console.log(inputTopping)
     var pizza = new Pizza(inputSize, inputTopping);
     pizza.sizePrice();
-    pizza.toppingPrice();
+    // pizza.toppingPrice();
     // pizza.totalPrice();
     $("#priceOutput").html(pizza.price);
     $(".menu").fadeOut(300);
