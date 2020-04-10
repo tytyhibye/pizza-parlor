@@ -1,10 +1,11 @@
 //Business Logic:
+let topHolder = []
+let topPrice = 0;
 
 function Pizza(size, topping, coupon,) {
   this.size = size;
   this.topping = topping;
   this.coupon = coupon; //might incorperate this later
-  // this.topPrice = topPrice; //might not need
 }
 
 //prototype method that uses the properties of the object to determine the price and adds price as a new property to the object
@@ -25,26 +26,26 @@ Pizza.prototype.sizePrice = function() {
 // ** NEED TO FIX THIS **
 
 Pizza.prototype.toppingPrice = function() {
-  $("input[type=radio]").click(function() {
-    this.topPrice = 0;
-    $("input[type=radio]:checked").each(function() {
-        this.topPrice += parseInt($(this).val());
-    });
-    return this.topPrice;
-  });
-  }
+
+ 
+}
   
-  // $("#outputnamehere").val(pizza.topPrice);
 
-  Pizza.prototype.totalPrice = function() {
+  // Pizza.prototype.totalPrice = function() {
 
-    this.priceTotal = this.price += this.topPrice;
-    return this.priceTotal;
-  }
+  //   this.priceTotal = this.price += this.topPrice;
+  //}
 
 //User Interface Logic:
 
 $(document).ready(function() {
+
+  $("input[type=radio]").click(function() {
+    
+    topHolder.push($(this).val())
+    
+  });
+
   $('#button1').on('click', '#start', function(event) {
     event.preventDefault();
     $("#start").fadeOut(300);
@@ -54,9 +55,12 @@ $(document).ready(function() {
   $("form#pizzaSpecs").submit(function(event) {
     event.preventDefault();
     
-    
+    console.log(topHolder.reduce(function(acc,cul){
+        return acc + cul
+      })
+    )
     var inputSize = $("#size").val();
-    var inputTopping = $("input[type=radio]:checked").val();
+    //var inputTopping = $("input[type=radio]:checked").val();
     
     var pizza = new Pizza(inputSize, inputTopping);
     pizza.sizePrice();
@@ -74,7 +78,7 @@ $(document).ready(function() {
       pizza.priceTotal = 0;
     })
   
-    console.log(pizza.topPrice,pizza.price,pizza.priceTotal);
+    // console.log(pizza.topPrice,pizza.price,pizza.priceTotal);
     
     // console.log(inputSize, inputTopping, pizza.base)
   })
