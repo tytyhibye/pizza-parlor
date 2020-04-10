@@ -7,22 +7,18 @@ function Pizza(size, topping, coupon,) {
   this.coupon = coupon; //might incorperate this later
 }
 
-//prototype method that uses the properties of the object to determine the price and adds price as a new property to the object
 
 
-
-  
-
- 
 //User Interface Logic:
 
 $(document).ready(function() {
-   let topHolder = []
-    let topping = ''
-  let topPrice
-
-  Pizza.prototype.sizePrice = function() {
   
+  let topHolder = []
+  let topping = ''
+  let topPrice
+  
+  Pizza.prototype.sizePrice = function() {
+    
     this.price = 8;
     if (this.size === 'Small') {
        this.price -= 2;
@@ -35,7 +31,7 @@ $(document).ready(function() {
     }
     return topPrice + this.price;
   }
-
+   
   $("input:checkbox").click(function() {
     
     topHolder.push(parseInt($(this).val()))
@@ -49,8 +45,8 @@ $(document).ready(function() {
 
   $('#button1').on('click', '#start', function(event) {
     event.preventDefault();
-    $("#start").fadeOut(300);
-    $(".menu").fadeIn(1700);
+    $("#start").fadeOut(200);
+    $(".menu").fadeIn(1800);
   })
   
   $("form#pizzaSpecs").submit(function(event) {
@@ -58,7 +54,6 @@ $(document).ready(function() {
     
     
     var inputSize = $("#size").val();
-    
     var pizza = new Pizza(inputSize);
     $("#priceOutput").html(pizza.sizePrice());
     $(".menu").fadeOut(300);

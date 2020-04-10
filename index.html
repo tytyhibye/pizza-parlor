@@ -12,14 +12,16 @@
   <body>
     <div class="container">
       <div class="jumbotron">
-        <h1>Ty Ty's Pizza Pies</h1>
-        <blockquote class ="bg-danger">
-            <p>"You're gonna friggen love these pizza pies."</p>
-            <footer>Ty Ty</footer>
-          </blockquote>
+        <div class="head">
+          <h1>Ty Ty's <br>Pizza Pies</h1>
+          </div>
+        <div id="quote">
+          <p>"You're gonna friggen love these pizza pies."</p>
+        </div>
+        
           <br>
           <div id="button1">
-            <button id="start" class="btn btn-danger btn-animated">Pizza Time</button>
+            <button id="start" class="btn btn-animated">Menu</button>
           </div>
       </div>
       <div class="menu">
@@ -33,6 +35,7 @@
           </select>
           <br>
           <h4>All pizza pie's come with cheese & sauce but add as many toppings as you like pal:</h4>
+          <br>
           <div class="checkbox">
             <label>
               <input type="checkbox" name="toppings" id="reg" value="2">
@@ -76,12 +79,14 @@
             </label>
             </div>
             <div id="button2">
-              <button type="submit" class="btn btn-danger btn-aimated">Bing Bang Boom <br> Pizza Time</button>
+              <button type="submit" id="boom" class="btn btn-aimated">Bing Bang Boom <br> Pizza Time</button>
             </div>
         </form>
       </div>
+      <br>
+      <br>
       <div class="results">
-        <h2>Your Total Is $<span id="priceOutput"></span></h2>
+        <h2 id="output">Your Total Is $<span id="priceOutput"></span></h2>
         <br>
         <div id="button3">
           <button id="reset" class="btn btn-danger btn-animated">I Change My Mind</button>
