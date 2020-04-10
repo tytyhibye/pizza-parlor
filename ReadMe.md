@@ -12,12 +12,12 @@ An interactive pizza site taking user input menu options and returning a specifi
 ```
 Logic:           | Example:   | Output
 -------------    | -----------| ----- 
-user inputs size | "XL"       | adds $5 
-^ chooses topping| pepperoni  | adds $1 
-add extra topping| jalapenos  | adds $1
-site stores value| price total| value of selections 
-btn for add pizza| [another]  | refresh menu 
-btn for checkout | [checkout] | total price 
+site greets you  |jumbotron   | greeting with menu button
+site shows menu  |click button| menu fades in below
+user inputs size | "XL"       | adds $5 to total
+^ chooses topping| bacon      | adds $2 to total
+add extra topping| facon      | adds $2 to total
+user submits     |click button| hides menu and fades in total 
 ```
 
 ## Setup/Installation Requirements
