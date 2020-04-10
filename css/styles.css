@@ -139,3 +139,10 @@ body {
    #menu-header {
      background-color: black;
    }
+   #output {
+     font-size: 4em;
+     
+   }
+   #priceOutput {
+     font-size: 1.75em;
+   }
