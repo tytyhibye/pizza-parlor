@@ -42,11 +42,11 @@ $(document).ready(function() {
     var inputTopping = $("input[type=radio]:checked").val();
     
     var pizza = new Pizza(inputSize, inputTopping);
-    pizza.getPrice(this.base);
+    pizza.getPrice(this.price);
     $("#priceOutput").html(pizza.price);
     $(".menu").fadeOut(200);
     $(".results").fadeIn(1700);
-    console.log(pizza.price);
+  
     
     
     // console.log(inputSize, inputTopping, pizza.base)
