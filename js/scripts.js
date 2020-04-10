@@ -1,9 +1,9 @@
 //Business Logic:
 
-function Pizza(size, topping, base, coupon, total) {
+function Pizza(size, topping, coupon,) {
   this.size = size;
   this.topping = topping;
-  this.coupon = coupon;
+  this.coupon = coupon; //might incorperate this later
   // this.topPrice = topPrice; //might not need
 }
 
@@ -21,8 +21,11 @@ Pizza.prototype.sizePrice = function() {
     return this.price;
   }
 }
+
+// ** NEED TO FIX THIS **
+
 Pizza.prototype.toppingPrice = function() {
-  $("input[type=radio]").click(function(inputTopping) {
+  $("input[type=radio]").click(function() {
     this.topPrice = 0;
     $("input[type=radio]:checked").each(function() {
         this.topPrice += parseInt($(this).val());
@@ -33,7 +36,8 @@ Pizza.prototype.toppingPrice = function() {
   
   // $("#outputnamehere").val(pizza.topPrice);
 
-  Pizza.prorotype.totalPrice = function() {
+  Pizza.prototype.totalPrice = function() {
+
     this.priceTotal = this.price += this.topPrice;
     return this.priceTotal;
   }
@@ -57,8 +61,8 @@ $(document).ready(function() {
     var pizza = new Pizza(inputSize, inputTopping);
     pizza.sizePrice();
     pizza.toppingPrice();
-    pizza.totalPrice();
-    $("#priceOutput").html(pizza.priceTotal);
+    // pizza.totalPrice();
+    $("#priceOutput").html(pizza.price);
     $(".menu").fadeOut(300);
     $(".results").fadeIn(1700);
 
@@ -70,7 +74,7 @@ $(document).ready(function() {
       pizza.priceTotal = 0;
     })
   
-    console.log(pizza.priceTotal);
+    console.log(pizza.topPrice,pizza.price,pizza.priceTotal);
     
     // console.log(inputSize, inputTopping, pizza.base)
   })
