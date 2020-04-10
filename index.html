@@ -29,43 +29,56 @@
             <option>"tilt to fit through my door" Large</option>
           </select>
           <br>
-          <h4>All pizza pie's come with cheese and sauce but add as many toppings as you like</h4>
+          <h4>All pizza pie's come with cheese & sauce but add as many toppings as you like pal:</h4>
           <div class="radio">
             <label>
-              <input type="radio" name="topping1" value="reg">
+              <input type="radio" name="topping1" id="reg" value="2">
               Regular ol' Bacon
             </label>
+          </div>
             <div class="radio">
             <label>
-              <input type="radio" name="topping2" value="pepper">
+              <input type="radio" name="topping2" id="pepper" value="2">
               Peppered Bacon
             </label>
             </div>
+            <div class="radio">
             <label>
-              <input type="radio" name="topping3" value="applewood">
+              <input type="radio" name="topping3" id="applewood" value="2">
               Applewood Smoked Bacon
             </label>
+            </div>
+            <div class="radio">
             <label>
-              <input type="radio" name="topping4" value=canadian">
+              <input type="radio" name="topping4" id="canadian" value="2">
               Canadian Bacon
             </label>
+            </div>
+            <div class="radio">
             <label>
-              <input type="radio" name="topping5" value="turkey">
+              <input type="radio" name="topping5" id="turkey" value="2">
               Turkey Bacon
             </label>
+            </div>
+            <div class="radio">
             <label>
-              <input type="radio" name="topping6" value="pancetta">
+              <input type="radio" name="topping6" id="pancetta" value="2">
               Pancetta
             </label>
+            </div>
+            <div class="radio">
             <label>
-              <input type="radio" name="topping7" value="facon">
+              <input type="radio" name="topping7" id="facon" value="2">
               I Can't Believe It's Not Bacon aka "Facon"
             </label>
-          </div>
-          <button type="submit" class="btn btn-danger btn-aimated">Bing Bang Boom</button>
+            </div>
+          <button type="submit" class="btn btn-danger btn-aimated">Bing Bang Boom <br> It's Pizza Time</button>
         </form>
       </div>
+      <div class="restults">
+        <h2>Your Total Is $<span id="priceOutput"></span></h2>
+      </div>
     </div>
-    
+
   </body>
 </html>
