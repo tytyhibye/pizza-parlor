@@ -4,3 +4,12 @@
 .menu {
   display: none;
 }
+body {
+  text-align: center;
+}
+.menu {
+  text-align: left;
+}
+#button2 {
+  text-align: center;
+}

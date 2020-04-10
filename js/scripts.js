@@ -22,15 +22,21 @@ Pizza.prototype.sizePrice = function() {
   }
 }
 Pizza.prototype.toppingPrice = function() {
-  $("input[type=radio]").click(function() {
+  $("input[type=radio]").click(function(inputTopping) {
     this.topPrice = 0;
     $("input[type=radio]:checked").each(function() {
         this.topPrice += parseInt($(this).val());
     });
+    return this.topPrice;
   });
   }
   
   // $("#outputnamehere").val(pizza.topPrice);
+
+  Pizza.prorotype.totalPrice = function() {
+    this.priceTotal = this.price += this.topPrice;
+    return this.priceTotal;
+  }
 
 //User Interface Logic:
 
@@ -49,12 +55,22 @@ $(document).ready(function() {
     var inputTopping = $("input[type=radio]:checked").val();
     
     var pizza = new Pizza(inputSize, inputTopping);
-    pizza.sizePrice(this.price);
-    $("#priceOutput").html(pizza.price);
+    pizza.sizePrice();
+    pizza.toppingPrice();
+    pizza.totalPrice();
+    $("#priceOutput").html(pizza.priceTotal);
     $(".menu").fadeOut(300);
     $(".results").fadeIn(1700);
+
+    $('#button3').on('click', '#reset', function(event) {
+      event.preventDefault();
+      $(".results").fadeOut(500);
+      $(".menu").fadeIn(1700);
+      document.getElementById('pizzaSpecs').reset();
+      pizza.priceTotal = 0;
+    })
   
-    console.log(pizza.topPrice);
+    console.log(pizza.priceTotal);
     
     // console.log(inputSize, inputTopping, pizza.base)
   })
