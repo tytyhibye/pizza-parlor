@@ -20,11 +20,11 @@ $(document).ready(function() {
   Pizza.prototype.sizePrice = function() {
     
     this.price = 8;
-    if (this.size === 'Small') {
+    if (this.size === 'Small - $6') {
        this.price -= 2;
-    } else if (this.size === 'Large') {
+    } else if (this.size === 'Large - $10') {
        this.price += 2; 
-    } else if (this.size === '"tilt to fit through my door" Large') {
+    } else if (this.size === '"tilt to fit through my door" Large - $13') {
        this.price += 5;
     } else {
        this.price;
