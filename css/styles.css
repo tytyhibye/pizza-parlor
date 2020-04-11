@@ -65,8 +65,9 @@ body {
   background-color: rgb(139, 24, 24);
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
-  animation: blur 1.25s ease-in-out;
+  animation: blur 8s ease-in-out;
   border-radius: 20px;
+  box-shadow: 0px 0px 10px #fff ;
 }
 @keyframes blur {
   from {
@@ -108,8 +109,9 @@ body {
     background-color: rgb(139, 24, 24);
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
-    animation: blur 1.25s ease-in-out;
+    animation: blur 8s ease-in-out;
     border-radius: 20px;
+    box-shadow: 0px 0px 10px #fff ;
   }
   #boom:active {
     background-color:  rgb(71, 47, 47);
@@ -129,8 +131,9 @@ body {
     background-color: rgb(139, 24, 24);
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
-    animation: blur 1.25s ease-in-out;
+    animation: blur 8s ease-in-out;
     border-radius: 20px;
+    box-shadow: 0px 0px 10px #fff ;
   }
   #boom:reset {
     background-color:  rgb(71, 47, 47);
